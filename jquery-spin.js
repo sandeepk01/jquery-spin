@@ -23,8 +23,8 @@
 		init: function(options) {
 			methods.option = $.extend({
 				size: 'med', //Options - max,med,min
-				message: '',
-				colors: ['#625EA0','#F52724','#00A662','#FFE01D']
+				message: '', //Custom message can be declared here
+				colors: ['#625EA0','#F52724','#00A662','#FFE01D']  //Array or HEX values do display color changes.
 			}, options || {});
 			methods._create(this);
 			return this;
@@ -32,7 +32,7 @@
 		_create: function(element){
 			var target = element;
 			var self = this;
-			var topMargin = (target.height()/3);
+			var topMargin = (target.height()/2-50);
 			var spinContainer = $('<div/>').attr('id','spinner').css('margin-top',topMargin);
 			var spinner = $('<div/>').addClass('spincover').addClass(this.option.size)
 			.html('<div class="windows8"><div class="wBall" id="wBall_1"><div class="wInnerBall"></div></div>'+
